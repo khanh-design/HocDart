@@ -54,7 +54,7 @@ void main() {
   /**
    * Cac vong for voi Interable
    */
-  var numbers = Iterable.generate(10);
+  // var numbers = Iterable.generate(10);
   // numbers.forEach((number) {
   //   print(number);
   // });
@@ -63,7 +63,7 @@ void main() {
   //   print(numbers.elementAt(i));
   // }
 
-  for (var number in numbers) {
-    print(number);
-  }
+  // for (var number in numbers) {
+  //   print(number);
+  // }
 }
