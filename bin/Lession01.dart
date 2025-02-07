@@ -1,4 +1,3 @@
-import 'package:dart_toturial/Lession01.dart' as dart_toturial;
 void main(List<String> arguments) {
   int a = 5;
   print(a.runtimeType);
@@ -7,7 +6,7 @@ void main(List<String> arguments) {
   /*
   - num: hay con duoc goi la lop cha cua cac kieu nghuyen thuy
   - runTimeType: tra ve kieu du lieu cua no duoc gan
-  */ 
+  */
   num b = 5;
   print(b.runtimeType);
   print(b);
