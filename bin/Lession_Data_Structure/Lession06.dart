@@ -1,39 +1,59 @@
-/**
- * Sets: Luu du lieu theo kieu khong tung lap
- * Muon khai bao set dinh nghiakieu truoc
- */
-var number = <int>{};
-var number2 = {1, 2, 3, 4, 5};
+/// Cac Data Structure co ban trong Dart
+/// 1. List
+/// 2. Set
+/// 3. Queue
+/// 4. Map
+/// Cach chuyen doi giua cac Data Structure (Convert)
+library;
 
-Set<int> number3 = {4, 5, 6};
-Set<String> number4 = {'tin', 'hoa', 'phuong'};
-Set<dynamic> test = {1, 'tin', 3.14};
+import 'dart:collection';
+
+var number = [1, 2, 3];
+List<int> list = [4, 5, 6];
+List<String> listString = ['tin', 'hoa', 'phuong'];
 
 void main(List<String> args) {
-  // Kiem tra kich thuoc
-  // print(number.length);
-  // print(number2.length);
-
-  //Duyet set
-  // number2.forEach((number) {
-  //   print(number);
+  //1. Duyet tung phan tu, add tuong ung
+  // List -> Set
+  // Set<String> set1 = {};
+  // list.forEach((element) {
+  //   set1.add('$element');
   // });
 
-  print('----------------------');
-  // test.forEach((item) {
+  // print(set1.length);
+  // set1.forEach((item) {
   //   print(item.runtimeType);
   //   print(item);
   // });
 
-  //Them phan tu
-  number.add(9);
-  number.add(10);
+  //2. Add all phan tu
+  // Set<String> set2 = {};
+  // set2.addAll(listString);
 
-  number.addAll(number2);
+  // set2.forEach((item) {
+  //   print(item);
+  // });
 
-  print(number.length);
-  print("------------");
-  number.forEach((element) {
-    print(element);
-  });
+  //3. .from(): Dung de convert tu List -> Set
+  // Set<dynamic> set3 = Set.from(number);
+  // set3.forEach((item) {
+  //   print(item);
+  // });
+
+  var queue = Queue.from(number);
+  for (var item in queue) {
+    print(item);
+  }
+
+  //4. .map()
+  /**
+   * list.map(): tra ve mot Iterable
+   * toList(): chuyen Iterable -> List
+   * toSet(): chuyen Iterable -> Set
+   */
+  List<String> strNumbers = number.map((e) {
+    return 'Number $e';
+  }).toList();
+
+  Set<String> set4 = list.map((e) => '#number $e').toSet();
 }

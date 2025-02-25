@@ -1,58 +1,41 @@
-var map1 = {};
-var map2 = {
-  'id': 1,
-  'name': 'John',
-  'age': 30,
-  'country': 'United States',
-  'city': 'New York',
-};
+import 'dart:collection';
+import 'dart:math';
 
-var map3 = {'id2': 2, 'name': 'John', 'age': 30, 'country': 'United States'};
-/**
- * Map la mot kieu du lieu luu tru cac cap key-value
- * Key phai la duy nhat
- * Value co the trung nhau
- * Key trung nhau thi no sex de len tha truoc
- */
-void main() {
-  // Kiem tra phan tu
-  print(map1.length);
-  // print(map2.length);
+/// Queue: Luu du lieu theo dang first in first out
+/// Cach khai bao: Queue<int> queue = Queue<int>();
+/// Cac phuong thuc cua Queue:
+/// - add(E value): Them phan tu vao cuoi Queue
+/// - addAll(Iterable<E> elements): Them tat ca phan tu cua Iterable vao cuoi Queue
+/// - clear(): Xoa tat ca phan tu cua Queue
+/// - element(): Lay phan tu dau tien cua Queue
+/// - remove(): Xoa va tra ve phan tu dau tien cua Queue
+/// - removeWhere(bool test(E element)): Xoa cac phan tu thoa
+var queue = Queue();
 
-  //duyet map
-  // map2.forEach((key, value) {
-  //   print('$key: $value');
-  // });
+var test = ['x', 'y', 'z'];
+
+var queue2 = Queue<int>();
+
+Queue<dynamic> check = Queue();
+void main(List<String> args) {
+  print(queue.length); // 0
 
   //Them phan tu
-  map1['number 1'] = '1';
-  print(map1.length);
+  queue.add('A');
+  queue.add('B');
+  queue.add('C');
 
-  map1.addAll(map2);
+  //Them tat ca phan tu cua Iterable
+  queue.addAll(test);
+  // what is it Interable?
+  // Iterable: la mot interface, no chua cac phuong thuc de duyet qua cac phan tu cua no
+  // List, Set, Queue, Map deu implement Iterable
+  // Iterable co 2 phuong thuc quan trong la forEach va iterator
 
-  map1.forEach((key, value) {
-    print('$key: $value');
-  });
-
-  //lay phan tu
-  print('----------------------');
-  print(map1['name']);
-
-  //Xoa phan tu
-  map1.remove('id');
-  print(map1.length);
-  map1.forEach((key, value) {
-    print('$key: $value');
-  });
-  //Xoa tat ca phan tu
-  // map1.clear();
-  // print(map1.length);
-
-  print('----------------------');
-  //Kiem tra xem co phan tu do khong
-  bool check = map1.containsKey('name');
-  bool check2 = map1.containsValue('John');
-  print(check);
-  print(check2);
-  print('----------------------');
+  queue.addFirst('D');
+  queue.addLast('E');
+  queue.remove('E');
+  for (var item in queue) {
+    print(item);
+  }
 }

@@ -17,7 +17,7 @@ void main() {
   /**
    * var: trong variable no la tu khoa kai bao bien
    */
-  var b;
+  Object b;
   print(b.runtimeType);
   print(b);
 

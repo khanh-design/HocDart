@@ -1,57 +1,52 @@
-// Lieu du lieu danh sach: List
-import 'dart:convert';
+/// Sets: Luu du lieu theo kieu khong tung lap
+/// Muon khai bao set dinh nghiakieu truoc
+var number = <int>{};
+var number2 = {1, 2, 3, 4, 5};
 
-var list1 = [];
-List<int> numbers = [];
+Set<int> number3 = {4, 5, 6};
+Set<String> number4 = {'tin', 'hoa', 'phuong'};
+Set<dynamic> test = {1, 'tin', 3.14};
 
-List<dynamic> list2 = <dynamic>[1, 'tin', 1.5]; // Chi dinh kieu
 void main(List<String> args) {
-  // Kiem tra do dai danh sach
-  // print(list1.length);
-  // print(numbers.length);
+  // Kiem tra kich thuoc
+  // print(number.length);
+  // print(number2.length);
 
-  // Them phan tu
-  // list1.add(1);
-  // list1.add("tin"); // boi vi kieu tren khai bao la var
-
-  numbers.add(3);
-  numbers.add(4);
-  numbers.add(5);
-
-  // duyet mang
-  // list1.forEach((i) {
-  //   print(i);
-  //   print(i.runtimeType);
+  //Duyet set
+  // number2.forEach((number) {
+  //   print(number);
   // });
 
-  //Lay phan tu dau tien va cuoi cung
-  // print(numbers.first);
-  // print(numbers.last);
-  // print(numbers[1]); // lay phan tu thu 2
-  // print(numbers.isEmpty);
-
-  list1.add(1);
-  list1.add(2);
-  list1.addAll(numbers); // Them ca 1 mang khac vao 1 danh sach
-
-  //Chen them 1 phan tu vao dau
-  // list1.insert(0, 0);
-  // list1.insert(2, 10);
-
-  // //Xoa 1 phan tu khoi danh sach
-  // list1.remove(10);
-  // list1.removeAt(1);
-  // list1.removeLast(); // Xoa cuoi danh sach
-  // list1.removeRange(0, 2); // Xoa tu index bao nhieu den index bao nhieu
-  // list1.clear(); // Xoa toan bo
-  // print(list1.length);
-
-  // Dao nguoc danh sach
-  // list1.reversed.forEach((i) {
-  //   print(i);
+  print('----------------------');
+  // test.forEach((item) {
+  //   print(item.runtimeType);
+  //   print(item);
   // });
 
-  list2.forEach((item) {
-    print(item);
-  });
+  //Them phan tu
+  number.add(9);
+  number.add(10);
+
+  number.addAll(number2);
+
+  print(number.length);
+  print("------------");
+  for (var element in number) {
+    print(element);
+  }
+
+  // Xoa phan tu
+  number.remove(1);
+  print(number.length);
+  print("------------");
+
+  //xem phan tu
+  print(test.first);
+  print(test.last);
+  print(test.elementAt(1));
+  print(test.isEmpty);
+  print(test.isNotEmpty);
+
+  //kiem tra test co chua phan tu trong mang hay khong
+  bool check = test.contains('tin');
 }
